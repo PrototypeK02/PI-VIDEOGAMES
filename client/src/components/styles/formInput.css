@@ -1,0 +1,108 @@
+.formInputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: 
+    url("https://p4.wallpaperbetter.com/wallpaper/953/106/494/digital-art-fantasy-art-how-to-train-your-dragon-movies-wallpaper-preview.jpg");
+    background-size: cover
+ 
+}
+
+.formInputs2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.formC{
+    background-color: rgb(34, 44, 138);
+    padding: 0px 60px;  
+    border-radius: 10px;
+    
+}
+
+.h1Form{
+    color: rgb(247, 115, 115);
+    text-align: center;
+}
+
+.btnForm{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(44, 44, 102);
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.formTextfield{
+    padding: 15px;
+    margin: 10px 0px;
+    width: 100%;
+
+}
+
+label{
+   
+        display: inline-block;
+        width: 150px;
+        text-align: left;
+        color:whitesmoke
+}
+
+.platform {
+display: flex;
+align-items:center;
+justify-content: right;
+    
+
+}
+
+.genre {
+    display:flex;
+    justify-content: center;
+    flex-direction:row;
+    flex-wrap: wrap;
+    max-width: fit-content;
+    justify-content: left;
+}
+
+
+.btnFormGACT{
+    display: flex;
+    background-color: rgb(44, 44, 102);
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    border-color: white;
+    margin-top: 2px;
+    margin: auto;
+}
+
+.btnFormG{
+    display: flex;
+    background-color: rgb(68, 68, 122);
+    color: rgb(0, 0, 0);
+    
+    
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border-color: rgb(99, 7, 7);
+    border: 10px;
+}
+
+
