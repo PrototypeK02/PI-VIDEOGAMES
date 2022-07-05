@@ -3,11 +3,15 @@ import { useDispatch,useSelector} from "react-redux"
 import {CHANGE_NEXT_PAGE, CHANGE_PAGE} from "../actiontypes/actiontypes"
 
 
-export default function changeNext(dispatch,pageData) {
-
+export default function changeNext(dispatch,pageData,referenceState) {
+    console.log(pageData)
+    if(15*pageData - referenceState.length <= 14) {
     
-    if(pageData >= 5) {
+    if(pageData === 7) {
         return dispatch({type: CHANGE_PAGE, payload: 1})
     }
+    else{
     return  dispatch({type: CHANGE_NEXT_PAGE})
+    }
+}
 }

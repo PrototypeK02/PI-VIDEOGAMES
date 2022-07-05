@@ -3,10 +3,13 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: 
-    url("https://p4.wallpaperbetter.com/wallpaper/953/106/494/digital-art-fantasy-art-how-to-train-your-dragon-movies-wallpaper-preview.jpg");
-    background-size: cover
  
+ 
+}
+
+.formBackg{
+    background-image:url("../../zelda-ocarina-of-time-artwork-78-1280x720.webp");
+    background-size: cover
 }
 
 .formInputs2{
@@ -19,11 +22,56 @@
 
 
 .formC{
-    background-color: rgb(34, 44, 138);
+    display: inline-block;
+    background-color: rgb(66, 92, 60);
     padding: 0px 60px;  
     border-radius: 10px;
+    width: 80%;
     
 }
+
+.gameDetails{
+    background-color: rgb(5, 5, 7);
+    padding: 0px 60px;  
+    border-radius: 10px;
+    margin-top: 600px;
+}
+
+
+.backbtn {
+	box-shadow: 0px 8px 0px 0px #636469;
+	background:linear-gradient(to bottom, #7892c2 5%, #363e47 100%);
+	background-color:#242830;
+	border-radius:39px;
+	border:4px solid #292f3f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:16px 65px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+    display: inline-block;
+    
+}
+.backbtn:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.backbtn:active {
+	position:relative;
+	top:1px;
+}
+
+        
+
+.infoDetails{
+    color: beige;
+}
+
+
 
 .h1Form{
     color: rgb(247, 115, 115);
@@ -49,6 +97,7 @@
     padding: 15px;
     margin: 10px 0px;
     width: 100%;
+    resize: none;
 
 }
 

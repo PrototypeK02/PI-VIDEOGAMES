@@ -1,4 +1,4 @@
-import { GET_ALL_GAMES,GET_VIDEOGAME_NAME,GET_VIDEOGAME_DETAIL, FILTER_BY_GENRES,SORT_BY_NAMEAZ,FILTER_BY_PLATFORM, RESET, CHANGE_NEXT_PAGE,CLEAR_NAME_DETAIL, CHANGE_BACK_PAGE, CHANGE_PAGE,SET_PAGE_STATE, RESET_DETAILS, SORT_BY_RATING15, NEED_BACKUP } from "../actiontypes/actiontypes"
+import {PRE_FILTER,GET_ALL_GAMES,GET_VIDEOGAME_NAME,GET_VIDEOGAME_DETAIL, NOT_FOUND, FILTER_BY_GENRES,SORT_BY_NAMEAZ,FILTER_BY_PLATFORM, RESET, CHANGE_NEXT_PAGE,CLEAR_NAME_DETAIL, CHANGE_BACK_PAGE, CHANGE_PAGE,SET_PAGE_STATE, RESET_DETAILS, SORT_BY_RATING15, NEED_BACKUP } from "../actiontypes/actiontypes"
 
 const initialState = {
     allVideoGames: [],
@@ -7,7 +7,9 @@ const initialState = {
     paginationPages: 1,
     paginationToShow: [],
     videoGameName: [],
-    backUpState: []
+    backUpState: [],
+    filteredState: [],
+    notfoundErr: ""
 }
 
 export default function reducer(state = initialState,{type,payload}) {
@@ -50,6 +52,12 @@ export default function reducer(state = initialState,{type,payload}) {
 
         case NEED_BACKUP:
             return {...state, backUpState: payload}
+
+        case PRE_FILTER:
+            return {...state, filteredState: state.filteredState.concat(payload)}
+
+        case NOT_FOUND:
+            return {...state, notfoundErr: payload}
 
             default:
                 return state

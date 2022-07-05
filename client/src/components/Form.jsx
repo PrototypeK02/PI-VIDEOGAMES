@@ -5,7 +5,7 @@ import valNameID from '../action/actionform/valNameId.'
 import { CHANGE_PAGE } from '../actiontypes/actiontypes'
 import { useDispatch } from 'react-redux'
 import getAllNames from '../action/getAllNames'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 export default function Form() {
 
     const [error, setError] = useState({
@@ -139,7 +139,7 @@ async function validateSubmit(e) {
             dispatch(getAllNames())
             dispatch({type: CHANGE_PAGE, payload: 1})
             alert("VideoGame Created!!. You'll be redirected to home in 5 seconds")
-            setTimeout(() => history.push("/"), 5000)
+            setTimeout(() => history.push("/home"), 5000)
         } catch (error) {
             throw alert("VideoGame Already Exists :(")
         }
@@ -152,8 +152,13 @@ async function validateSubmit(e) {
 
 
   return (
+    <>
+    <div className="formBackg">
+     <Link to="/Home"> <button className='backbtn'>Go Back</button> </Link>
     <div className='formInputs'>
+        
         <form className='formC'>
+            
             <h1 className='h1Form'>Create Game</h1>
     <div >
         
@@ -193,14 +198,14 @@ async function validateSubmit(e) {
 
         <div className="genre">
             
-                {plataform.map(el => <ol><button className={inputs.platform.includes(el) ? "btnFormG" : "btnFormGACT"} onClick={(e) => {return validateplat(inputs,el,e)}}>{el}</button></ol>)}
+                {plataform.map(el => <ol key={el}><button  className={inputs.platform.includes(el) ? "btnFormG" : "btnFormGACT"} onClick={(e) => {return validateplat(inputs,el,e)}}>{el}</button></ol>)}
             
           </div>
 
         <label>Select Genres</label>
         <div className="genre">
             
-                {genres.map(el => <ol><button onClick={(e) => validategen(inputs,el,e)} className={inputs.genre.find(e => e.name === el) ? "btnFormG" : "btnFormGACT" }>{el}</button></ol>)}
+                {genres.map(el => <ol key={el}><button onClick={(e) => validategen(inputs,el,e)} className={inputs.genre.find(e => e.name === el) ? "btnFormG" : "btnFormGACT" }>{el}</button></ol>)}
             
           </div>
 
@@ -209,5 +214,7 @@ async function validateSubmit(e) {
 
         </form>
         </div>
+        </div>
+        </>
   )
 }

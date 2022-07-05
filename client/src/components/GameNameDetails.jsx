@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useLocation, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {onSearch} from '../action/searchName'
 import SearchBar from './SearchBar'
 import background from "../../src/4265798.jpg"
 import { CLEAR_NAME_DETAIL } from '../actiontypes/actiontypes'
 import Loading from './Loading'
-import { RESET } from '../actiontypes/actiontypes'
+import "./styles/formInput.css"
+import "./styles/home.css"
+
 export default function GameNameDetails() {
     let dispatch= useDispatch()
     let search = window.location.search
@@ -18,7 +20,7 @@ export default function GameNameDetails() {
     useEffect(() => {
         onSearch(gameNameDe,dispatch)
     
-    return dispatch({type: CLEAR_NAME_DETAIL})
+    return () => dispatch({type: CLEAR_NAME_DETAIL})
     
     }, [gameNameDe])
     
@@ -28,10 +30,8 @@ export default function GameNameDetails() {
   return (
     <div>
         {!details[0]? <Loading/> :
-    <div className="Loadingif" style={{
-        backgroundImage: `url(${background})`
-    }}>
-        <Link className='link' to="/Home"> <button>Go Back</button> </Link> 
+    <div className="HomeBackground">
+        <Link to="/Home"> <button className="backbtn">Go Back</button> </Link> 
         <div><SearchBar/></div>
         
         {details&& details.map(el => {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import "./styles/home.css"
 
 
 export default function SearchBar() {
@@ -18,7 +18,7 @@ export default function SearchBar() {
         onChange={e => setGame(e.target.value)}
       />
       <input className="go"type="submit" value="Go!" />
-      <button onClick={(e) => {e.preventDefault();history.push("/createnewgame")}}>Create Your Own Game!</button>
+      
     </form>
   );
 }
